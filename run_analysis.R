@@ -42,6 +42,6 @@ names(subData) <- gsub("Mag", "Magnitude", names(subData))
 Averages_by_SubjAct <- group_by(subData, subjectID, Activity) %>% summarise_each(funs(mean))
 
 
-#write new dataset to csv file in wd
-write.csv(Averages_by_SubjAct, file = "./AveragesBySubjectActivity.csv")
+#write new dataset to text file in wd
+write.table(Averages_by_SubjAct, file = "./AveragesBySubjectActivity.csv", row.names = FALSE)
 

@@ -1,5 +1,5 @@
 #run_analysis.R summary: takes data from a public domain dataset for human
-#activity recognition using smartphones saved in a folder "UCI HAR Dataset"
+#activity recognition using smartphones saved in a folder "UCI HAR Dataset" within working directory
 #to extract measurements and create a new tidy dataset
 
 library(dplyr)
@@ -41,8 +41,7 @@ names(subData) <- gsub("Mag", "Magnitude", names(subData))
 #average of each variable for each activity and each subject
 Averages_by_SubjAct <- group_by(subData, subjectID, Activity) %>% summarise_each(funs(mean))
 
-#print first part of new dataset
-print(head(Averages_by_SubjAct))
 
-
+#write new dataset to csv file in wd
+write.csv(Averages_by_SubjAct, file = "./AveragesBySubjectActivity.csv")
 

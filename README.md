@@ -11,8 +11,8 @@ The run_analysis.R script is intended to take the accelerometer data from all su
 The script combines the training and test sets into one data set, and adds subject and activity information to the corresponding
 measurement observation.  Then, only mean and standard deviation variables for each measurement are extracted from the data set.
 The list of the features are modified into descriptive variable names.  Finally the data are summarized into a new data set containing
-the average of each variable for each subject and activity.  The script writes this new data set to an output csv file named
-"AveragesBySubjectActivity.csv," and is included in this repo.
+the average of each variable for each subject and activity.  The script writes this new data set to an output text file named
+"AveragesBySubjectActivity.txt."
 
 
 
